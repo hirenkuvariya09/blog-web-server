@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    /* Set gray background color and 100% height */
+    body {
+      background: #f5f5f5;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    
+        /* Sidebar */
+    .sidebar {
+      background-color: #2c3e50; /* Updated sidebar background color */
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #ecf0f1; /* Updated sidebar text color */
+      display: block;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e; /* Darken on hover */
+    }
+
+    .logout {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a href="#" class="active">Dashboard</a>
+  <a href="/CreateBlog">Create Blog</a>
+  <a href="/Card">Blog List</a>
+  <a href="/Feedback">Feedback List</a>
+
+  <a class="logout" id="logoutBtn">Logout</a></div>
+
+
+<script>
+  document.getElementById('logoutBtn').addEventListener('click', function() {
+    // Clear session data or perform any other logout-related actions here
+    // For example, clearing localStorage
+    localStorage.clear();
+    // Redirect to the login page
+    window.location.href = "/"; // Replace "/login" with your actual login page URL
+  });
+</script>
+</body>
+
+</html>

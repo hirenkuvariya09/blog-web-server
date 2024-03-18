@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* You can keep your custom CSS here */
+        /* For demonstration, I've added some basic styling */
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 50px 50px 50px 50px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body class="container-fluid" style="background-color: #34495e;;" >
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="form-container bg-light rounded">
+                    <h2 class="text-center mb-4">Registration</h2>
+                    <form id="signupForm" action="/signup" method="post">
+                        <div class="form-group">
+                            <label for="name">Username:</label>
+                            <input type="text" class="form-control" id="name" name="username" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label for="number">Number:</label>
+                          <input type="number" class="form-control" id="number" name="number" placeholder="Enter your number" required   title="xxxxxxxxxx">
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email:</label>
+                          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password"  class="form-control"  id="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one letter, one number, and be at least 8 characters long.">
+                          </div>
+                        <button type="submit" class="btn btn-primary btn-block">signup</button>
+                    </form>
+                    <p class="text-center mt-3">Don't have an account? <a class="link" href="/">login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS and dependencies (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Function to store form data in local storage
+      function storeFormData() {
+          const formData = {
+              username: document.getElementById('name').value,
+              number: document.getElementById('number').value,
+              email: document.getElementById('email').value,
+              password: document.getElementById('password').value
+          };
+          localStorage.setItem('formData', JSON.stringify(formData));
+      }
+
+      // Add event listener to form submission
+      document.getElementById('signupForm').addEventListener('submit', function(event) {
+          // Call function to store form data
+          storeFormData();
+      });
+  </script>
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/style.css">
+      <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
+</head>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>SignUp</h2>
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="username" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="number">Number:</label>
+            <input type="text" id="number" name="number" placeholder="Enter your number" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Create Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one letter, one number, and be at least 8 characters long.">
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <p>you have an alredy account? <a class="link" href="/">Login</a></p>
+
+      </div>
+      
+</body>
+</html> -->
